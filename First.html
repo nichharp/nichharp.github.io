@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First JavaScript</h2>
+<!-- <p> Declare a variable, Store a value, Display as Document, Alert and Console</p> -->
+
+<button onclick="boop()">DON'T PRESS ME</button>
+<br>
+<button onclick="increaseAge()">You want Nick to be older?</button>
+<br>
+<input type="text" id="Name" value="Name">
+<br>
+<input type="text" id="Age" value="Age">
+<br>
+<input type="text" id="Occu" value="Occupation">
+<br>
+<button onclick="makerPersonbyButt()">Make Person</button>
+<br>
+<!-- <input type="text" id="ageQuestion" value="Name in Question">
+<br> -->
+<button onclick="checkAge()">Check Age</button>
+<br>
+<button onclick="loopOne()">Numbers 1-10</button>
+<br>
+<button onclick="loopTwo()">Numbers divis by 2</button>
+<br>
+<input type="text" id="FizzBuzzOne" value="Count To">
+<br>
+<input type="text" id="FizzBuzzTwo" value="If divis by 3">
+<br>
+<input type="text" id="FizzBuzzThree" value="If divis by 5">
+<br>
+<button onclick="loopFizzBuzz()">Fizz Buzz</button>
+<br>
+<input type="text" getElementById("message") value="999999999999999" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+<br>
+<button onclick="loopFour(document.getElementById('loopFour').value)">Loop Four BAYBEEE</button>
+<br>
+<input type="text" id="triples" value="Enter your triple String">
+<br>
+<button onclick="triples(document.getElementById('triples').value)">Submit your Triple</button>
+<br>
+<button onclick="DOMcreate()">DOMcreate</button>
+<br>
+<input type="text" id="DOMchange" value="Enter your DOM change">
+<br>
+<button onclick="DOMchange(document.getElementById('DOMchange').value)">DOMchange</button>
+<br>
+<button onclick="DOMdelete()">DOMdelete</button>
+<br>
+<div id = "message">
+</div>
+
+
+
+
+
+
+
+<script>
+	function square(x) {
+		return x*x;
+	}
+	function sumthree(x,y,z) {
+		return x+y+z;
+	}
+	function makerPersonbyButt() {
+		makerPerson(document.getElementById("Name").value, document.getElementById("Age").value, document.getElementById("Occu").value);
+	}
+	function makerPerson(x,y,z) {
+		Person.name = x;
+		Person.age = y;
+		Person.occupation = z;
+		document.write(Person.name + " " +  Person.age + " " + Person.occupation + " ");
+		console.log(Person.name + " " +  Person.age + " " + Person.occupation + " ");
+	}
+	function boop() {
+		window.alert("D0n'T PrEsS tHe BUtT00n");
+	}
+	function increaseAge() {
+		Person.age = Person.age +1;
+		window.alert("Nick is now " + Person.age);
+	}
+	function checkAge() {
+		if (Person.age<=40 & Person.age>=20) {
+			document.write(Person.name + " is between 20-40");
+		}
+	}
+	function loopOne() {
+		for (var i = 1; i <= 10; i++) {
+			document.write(i);
+			document.write("<br>");
+
+		}
+	}
+	function loopTwo() {
+		for (var j = 1; j <= 20; j++) {
+			if (j%2 === 0) {
+				document.write(j);
+				document.write("<br>");
+			}
+		}
+	}
+	function loopFizzBuzz() {
+		var a = document.getElementById("FizzBuzzOne").value;
+		var b = document.getElementById("FizzBuzzTwo").value;
+		var c = document.getElementById("FizzBuzzThree").value;
+		for (var i = 1; i <= a; i++) {
+			if (i%3===0 & i%5===0) {
+				document.write(b+c);
+				document.write("<br>");		
+			} else if (i%3 ===0){
+				document.write(b);
+				document.write("<br>");		
+			} else if (i%5===0){
+				document.write(c);
+				document.write("<br>");		
+			}
+		}
+	}
+	function loopFour(b) {
+		var a = parseInt(b);
+		document.write(a);
+		document.write("<br>");
+		while (a!==1) {
+			if (a%3===0) {
+				document.write("divide by 3   -   ");
+				a = a/3;
+				document.write(a);
+				document.write("<br>");
+			} else {
+				document.write("Add 1    -   ");
+				a += 1;
+				document.write(a);
+				document.write("<br>");
+
+			}
+		}
+	}
+	function triples(a) {
+		var count = 0;
+		for (var i = 2; i <= a.length; i++) {
+			if (a.charAt(i)===a.charAt(i-1) & a.charAt(i)===a.charAt(i-2)) {
+				count += 1;
+			}
+		}
+		document.write(count);
+	}
+	function DOMcreate() {
+		document.getElementById("message").innerHTML = <p> A luau (Hawaiian: lūʻau) is a traditional Hawaiian party or feast that is usually accompanied by entertainment. It may feature food such as poi, Kalua pig, poke, lomi salmon, opihi, haupia and beer, and entertainment such as traditional Hawaiian music and hula. Among people from Hawaiʻi, the concepts of sfsfs and sdfsdfs are often blended, resulting in graduation luau, wedding luau and birthday luau. </p>;
+	}
+	function DOMchange(a) {
+		document.getElementById("message").innerHTML = a;
+	}
+	function DOMdelete() {
+		document.getElementById("message").innerHTML = "";
+	}
+
+
+
+	var Person = {};
+	makerPerson("Nick", 21 ,"Java Dev");
+
+
+
+
+
+	// document.write("<br>");
+	// var e = 'He said "My name is Elliot"';
+	// document.write(e);
+	// document.write("<br>");
+	// document.write(e.toUpperCase());
+	// document.write("<br>");
+	// var str = "5";
+	// var num = 10;
+	// document.write(str+num);
+	// document.write("<br>");
+	// var myArray = ['cash' , 'money' , 'armour'];
+	// document.write(myArray);
+	// document.write("<br>");
+	// myArray[myArray.length] = 'grils';
+	// document.write(myArray);
+	// document.write("<br>");
+	// delete myArray[3];
+	// document.write(myArray);
+	// document.write("<br>");
+	// var a = "Where the Document.write writes to  <----------";
+	// var N = makerPerson("Mick", 22 ,"homeless" + " ");
+	// document.write(N.name + " " + N.age+ " " + N.occupation);
+	// document.write(a);
+	// window.alert(a);
+	// console.log(a);
+	// var z = first(9,9);
+
+</script>
+
+</body>
+</html> 
