@@ -103,7 +103,7 @@ function JsonOne() {
     var toPrint = "";
 
     request.open('GET', requestURL);
-    request.responseType = "json"
+    request.responseType = "json";
     request.send();
     request.onload = function () {
         var requestData = request.response;
@@ -123,7 +123,7 @@ function JsonOne() {
         // 		}
         // 	}
         // print(toPrint);
-    }
+    };
 }
 var requestData;
 function JsonTwo() {
@@ -131,7 +131,7 @@ function JsonTwo() {
     var request = new XMLHttpRequest();
     var toPrint = "";
     request.open('GET', requestURL);
-    request.responseType = "json"
+    request.responseType = "json";
     request.send();
     request.onload = function () {
         requestData = request.response;
@@ -148,7 +148,7 @@ function JsonTwo() {
         if (document.getElementById("JsonTwoBox").checked === true) {
             print(toPrint);
         }
-    }
+    };
 }
 
 function print(a) {
@@ -179,7 +179,6 @@ function search(a) { //works for single year Kings & works for full input years 
         // console.log(typeof years);
         else if (a.indexOf(years) !== -1) {
             console.log(requestData[i]);
-
         }
     }
 
