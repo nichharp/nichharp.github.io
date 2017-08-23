@@ -1,69 +1,144 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Landing Page - Start Bootstrap Theme</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom fonts for this template -->
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<!-- Custom styles for this template -->
+	<link href="css/landing-page.css" rel="stylesheet">
+
+</head>
+
 <body>
 
-	<h2>My First JavaScript</h2>
-	<!-- <p> Declare a variable, Store a value, Display as Document, Alert and Console</p> -->
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Home</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+			 aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="Contact.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-	<button onclick="boop()">DON'T PRESS ME</button>
-	<br>
-	<button onclick="increaseAge()">You want Nick to be older?</button>
-	<br>
-	<input type="text" id="Name" value="Name">
-	<br>
-	<input type="text" id="Age" value="Age">
-	<br>
-	<input type="text" id="Occu" value="Occupation">
-	<br>
-	<button onclick="makerPersonbyButt()">Make Person</button>
-	<br>
-	<!-- <input type="text" id="ageQuestion" value="Name in Question">
+	<!-- Header -->
+	<header class="intro-header">
+		<div class="container">
+			<div class="intro-message">
+				<h1>Nick's Homepage</h1>
+				<h3>WELCOME BOiiiii!</h3>
+				<hr class="intro-divider">
+				<ul class="list-inline intro-social-buttons">
+					<li class="list-inline-item">
+						<a href="https://www.instagram.com/husky.heaven/?hl=en" class="btn btn-secondary btn-lg">
+									<i class="fa fa-paw fa-fw"></i>
+									<span class="network-name">Husky Here</span>
+								</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="https://github.com/nichharp/nichharp.github.io" class="btn btn-secondary btn-lg">
+									<i class="fa fa-github fa-fw"></i>
+									<span class="network-name">Gitbub</span>
+								</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="Projects.html" class="btn btn-secondary btn-lg">
+									<i class="fa fa-file-word-o fa-fw"></i>
+									<span class="network-name">Projects</span>
+									<a href="https://www.instagram.com/husky.heaven/?hl=en"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+	<body>
+
+		<h2>My First JavaScript</h2>
+		<!-- <p> Declare a variable, Store a value, Display as Document, Alert and Console</p> -->
+
+		<button onclick="boop()">DON'T PRESS ME</button>
+		<br>
+		<button onclick="increaseAge()">You want Nick to be older?</button>
+		<br>
+		<input type="text" id="Name" value="Name">
+		<br>
+		<input type="text" id="Age" value="Age">
+		<br>
+		<input type="text" id="Occu" value="Occupation">
+		<br>
+		<button onclick="makerPersonbyButt()">Make Person</button>
+		<br>
+		<!-- <input type="text" id="ageQuestion" value="Name in Question">
 <br> -->
-	<button onclick="checkAge()">Check Age</button>
-	<br>
-	<button onclick="loopOne()">Numbers 1-10</button>
-	<br>
-	<button onclick="loopTwo()">Numbers divis by 2</button>
-	<br>
-	<input type="text" id="FizzBuzzOne" value="Count To">
-	<br>
-	<input type="text" id="FizzBuzzTwo" value="If divis by 3">
-	<br>
-	<input type="text" id="FizzBuzzThree" value="If divis by 5">
-	<br>
-	<button onclick="loopFizzBuzz()">Fizz Buzz</button>
-	<br>
-	<input type="text" id="loopFour" value="999999999999999" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
-	<br>
-	<button onclick="loopFour(document.getElementById('loopFour').value)">Loop Four BAYBEEE</button>
-	<br>
-	<input type="text" id="triples" value="Enter your triple String">
-	<br>
-	<button onclick="triples(document.getElementById('triples').value)">Submit your Triple</button>
-	<br>
-	<button onclick="DOMcreate()">DOMcreate</button>
-	<br>
-	<input type="text" id="DOMchange" value="Enter your DOM change">
-	<br>
-	<button onclick="DOMchange(document.getElementById('DOMchange').value)">DOMchange</button>
-	<br>
-	<button onclick="DOMdelete()">DOMdelete</button>
-	<br>
-	<button onclick="JsonOne()">JSON 1</button>
-	<br>
-	<button onclick="JsonTwo()">JSON 2</button> <input type="checkbox" id="JsonTwoBox"> tick this box if you want the file to
-	be displayed
-	<br>
-	<input type="text" id="searchForKings" value="Enter your Search value">
-	<br>
-	<button onclick="search(document.getElementById('searchForKings').value)">Search in Kings</button>
-	<br>
+		<button onclick="checkAge()">Check Age</button>
+		<br>
+		<button onclick="loopOne()">Numbers 1-10</button>
+		<br>
+		<button onclick="loopTwo()">Numbers divis by 2</button>
+		<br>
+		<input type="text" id="FizzBuzzOne" value="Count To">
+		<br>
+		<input type="text" id="FizzBuzzTwo" value="If divis by 3">
+		<br>
+		<input type="text" id="FizzBuzzThree" value="If divis by 5">
+		<br>
+		<button onclick="loopFizzBuzz()">Fizz Buzz</button>
+		<br>
+		<input type="text" id="loopFour" value="999999999999999" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+		<br>
+		<button onclick="loopFour(document.getElementById('loopFour').value)">Loop Four BAYBEEE</button>
+		<br>
+		<input type="text" id="triples" value="Enter your triple String">
+		<br>
+		<button onclick="triples(document.getElementById('triples').value)">Submit your Triple</button>
+		<br>
+		<button onclick="DOMcreate()">DOMcreate</button>
+		<br>
+		<input type="text" id="DOMchange" value="Enter your DOM change">
+		<br>
+		<button onclick="DOMchange(document.getElementById('DOMchange').value)">DOMchange</button>
+		<br>
+		<button onclick="DOMdelete()">DOMdelete</button>
+		<br>
+		<button onclick="JsonOne()">JSON 1</button>
+		<br>
+		<button onclick="JsonTwo()">Kings (JSON 2)</button> <input type="checkbox" id="JsonTwoBox"> tick this box if you want all
+		the Kings to be to be displayed
+		<br>
+		<input type="text" id="searchForKings" value="Enter your Search value">
+		<br>
+		<button onclick="search(document.getElementById('searchForKings').value)">Search in Kings</button>
+		<br>
 
 
 
-	<div id="message">
-	</div>
+		<div id="message">
+		</div>
 
 
 
@@ -71,10 +146,10 @@
 
 
 
-	<script src="myExercises.js">
+		<script src="myExercises.js">
 
-	</script>
+		</script>
 
-</body>
+	</body>
 
 </html>
