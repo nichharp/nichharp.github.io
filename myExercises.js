@@ -142,35 +142,6 @@ function JsonOne() {
                 document.getElementById("message").innerHTML += name1 + ": " + requestData[name1] + ", " + "<br>";
             }
         }
-
-
-
-        // for (let i = 0; i < requestData.length - 1; i++) {
-        //     document.getElementById("message").innerHTML += requestData[i] + ", ";
-        // }
-        // console.log(requestData[5].length);
-        // for (let i = 0; i < requestData[5].length; i++) {
-        //     document.getElementById("message").innerHTML += requestData[i].members[j].name + ", " + requestData[i].members[j].age + ", " + requestData[i].members[j].secretIndentity + ", ";
-        //     if (i === 3) {
-        //         document.getElementById("message").innerHTML += "Powers : ";
-        //         for (let j = 0; j < requestData[5].members[i].length; j++) {
-        //             document.getElementById("message").innerHTML += requestData[5].members[i].powers[j];
-        //         }
-        //     }
-        // }
-
-        // 	for (var i =0; i<requestData.length; i++) {
-        // 		// console.log(requestData[i].nm);
-
-        // 		toPrint +="<p>" + requestData[i].squadName + ", " + requestData[i].homeTown+ ", " +requestData[i].formed+ ", " + requestData[i].secretBase + ", "+ requestData[i].active + ", "  +requestData[i].members + ", " + "\n" + "Members: " +"</p>";
-        // 		for (var j =0;j<requestData[i].members.length;j++) {
-        // 			toPrint +=  "<p>" + requestData[i].members[j].name + ", " + requestData[i].members[j].age+ ", " +requestData[i].members[j].secretIndentity+ ", " + "\n" + "Powers: " +"</p>"
-        // 			for (var k=0; k<requestData[i].members[j].length;k++) {
-        // 				toPrint += "<p>" + requestData[i].members[j].powers[k]+ "</p>" ;
-        // 			}
-        // 		}
-        // 	}
-        // print(toPrint);
     };
 }
 var requestData;

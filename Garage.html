@@ -85,9 +85,17 @@
         <br>
         <input type="text" id="CarMake" value="The Car Make">
         <br>
-        <input type="text" id="Value" value="Box for numbers only" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <input type="text" id="CarMileage" value="The Car Mileage" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         <br>
-        <button onclick="addCar()">Add your car to Garage</button>
+        <button onclick="addCar(document.getElementById('CarName').value , document.getElementById('CarMake').value, document.getElementById('CarMileage').value )">Add your car to Garage</button>
+        <br>
+        <br>
+        <button onclick="printGarage()">Print The Garage</button>
+        <br>
+        <br>
+        <input type="text" id="numForRemov" value="Checkout Car Number">
+        <br>
+        <button onclick="removeCar(document.getElementById('numForRemov').value)">Checkout Car</button>
         <br>
         <!-- <input type="text" id="triples" value="Enter your triple String">
         <br>
