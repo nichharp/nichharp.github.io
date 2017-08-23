@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+!DOCTYPE html>
+<html>
 
 <head>
 
@@ -30,8 +30,8 @@
             <a class="navbar-brand" href="index.html">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+				  <span class="navbar-toggler-icon"></span>
+				</button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -49,54 +49,83 @@
     <header class="intro-header">
         <div class="container">
             <div class="intro-message">
-                <h1>Nick's Projects</h1>
-                <h3>Wouldn't you rather look at dogs than my code?</h3>
+                <h1>Nick's Homepage</h1>
+                <h3>WELCOME BOiiiii!</h3>
                 <hr class="intro-divider">
                 <ul class="list-inline intro-social-buttons">
                     <li class="list-inline-item">
                         <a href="https://www.instagram.com/husky.heaven/?hl=en" class="btn btn-secondary btn-lg">
-                            <i class="fa fa-paw fa-fw"></i>
-                            <span class="network-name">Husky Here</span>
-                        </a>
+									<i class="fa fa-paw fa-fw"></i>
+									<span class="network-name">Husky Here</span>
+								</a>
                     </li>
                     <li class="list-inline-item">
                         <a href="https://github.com/nichharp/nichharp.github.io" class="btn btn-secondary btn-lg">
-                            <i class="fa fa-github fa-fw"></i>
-                            <span class="network-name">Gitbub</span>
-                        </a>
+									<i class="fa fa-github fa-fw"></i>
+									<span class="network-name">Gitbub</span>
+								</a>
                     </li>
                     <li class="list-inline-item">
                         <a href="Projects.html" class="btn btn-secondary btn-lg">
-                            <i class="fa fa-file-word-o fa-fw"></i>
-                            <span class="network-name">Projects</span>
-                            </a>
+									<i class="fa fa-file-word-o fa-fw"></i>
+									<span class="network-name">Projects</span>
+									<a href="https://www.instagram.com/husky.heaven/?hl=en"></a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <section class="content-section-a">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 ml-auto">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <p class="lead">These are all the Exercises that I have completed over the week.</p>
-                    <a href="First.html">The Exercises </a>
-                    <br>
-                    <a href="Garage.html">The Garage Exercise </a>
-                </div>
-            </div>
+    <body>
+
+        <h2>The Garage</h2>
+        <!-- <p> Declare a variable, Store a value, Display as Document, Alert and Console</p> -->
+
+        <input type="text" id="CarName" value="The Car Name">
+        <br>
+        <input type="text" id="CarMake" value="The Car Make">
+        <br>
+        <input type="text" id="Value" value="Box for numbers only" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <br>
+        <button onclick="addCar()">Add your car to Garage</button>
+        <br>
+        <!-- <input type="text" id="triples" value="Enter your triple String">
+        <br>
+        <button onclick="triples(document.getElementById('triples ').value)">Submit your Triple</button>
+        <br>
+        <button onclick="DOMcreate()">DOMcreate</button>
+        <br>
+        <input type="text" id="DOMchange" value="Enter your DOM change">
+        <br>
+        <button onclick="DOMchange(document.getElementById('DOMchange ').value)">DOMchange</button>
+        <br>
+        <button onclick="DOMdelete()">DOMdelete</button>
+        <br>
+        <button onclick="JsonOne()">JSON 1</button>
+        <br>
+        <button onclick="JsonTwo()">Kings (JSON 2)</button> <input type="checkbox" id="JsonTwoBox"> tick this box if you
+        want all the Kings to be to be displayed
+        <br>
+        <input type="text" id="searchForKings" value="Enter your Search value">
+        <br>
+        <button onclick="search(document.getElementById('searchForKings ').value)">Search in Kings</button>
+        <br> -->
+
+
+
+        <div id="message">
         </div>
-    </section>
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-</body>
+
+
+
+
+        <script src="garageJava.js">
+
+        </script>
+
+    </body>
 
 </html>

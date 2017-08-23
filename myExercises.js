@@ -121,24 +121,25 @@ function JsonOne() {
         //then for powers
         //loop through powers
         // console.log(requestData.squadName);
-        for (var name in requestData) {
-            if (name === "members") {
+        for (var name1 in requestData) {
+            if (name1 === "members") {
                 for (let j = 0; j < requestData.members.length; j++) {
+                    document.getElementById("message").innerHTML += name1 + ": " + requestData.members[j].name + " who is " + requestData.members[j].age + " years old and who's real name is " + requestData.members[j].secretIdentity + " and their powers - " + "<br>";
                     for (var name2 in requestData.members[j]) {
                         if (name2 === "powers") {
                             for (let i = 0; i < requestData.members[j].powers.length; i++) {
-                                document.getElementById("message").innerHTML += name2 + ": " + requestData.members[j][name2][i];
+                                document.getElementById("message").innerHTML += "             " + name2 + ": " + requestData.members[j][name2][i] + "<br>";
                             }
                         }
                         else if (requestData.members.hasOwnProperty(name2)) {
-                            console.log(requestData[name]);
+                            console.log(requestData[name1]);
                             document.getElementById("message").innerHTML += name2 + ": " + requestData.members[j][name2] + ", " + "<br>";
                         }
                     }
                 }
             }
-            else if (requestData.hasOwnProperty(name)) {
-                document.getElementById("message").innerHTML += name + ": " + requestData[name] + ", " + "<br>";
+            else if (requestData.hasOwnProperty(name1)) {
+                document.getElementById("message").innerHTML += name1 + ": " + requestData[name1] + ", " + "<br>";
             }
         }
 
