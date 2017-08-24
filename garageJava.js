@@ -48,7 +48,7 @@ function printSingleCar(c) {
 function removeCar(a) {
     document.getElementById("message").innerHTML = "";
     if (CarList[a].bool === true) {
-        document.getElementById("message").innerHTML += CarList[a].carName "Your " + CarList[a].carMake + " has now been checked out";
+        document.getElementById("message").innerHTML += CarList[a].carName + ", your " + CarList[a].carMake + " has now been checked out";
         // console.log(CarList);
         CarList.splice(a, 1);
         // console.log(CarList);
