@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -93,10 +93,18 @@
         <button onclick="printGarage()">Print The Garage</button>
         <br>
         <br>
+        <input type="text" id="BillIndiv" value="Car Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <br>
+        <button onclick="billMeBaby(document.getElementById('BillIndiv'))">Bill Car</button>
+        <br>
+        <br>
         <input type="text" id="numForRemov" value="Checkout Car Number">
         <br>
         <button onclick="removeCar(document.getElementById('numForRemov').value)">Checkout Car</button>
         <br>
+
+
+
         <!-- <input type="text" id="triples" value="Enter your triple String">
         <br>
         <button onclick="triples(document.getElementById('triples ').value)">Submit your Triple</button>
