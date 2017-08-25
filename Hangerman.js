@@ -52,7 +52,7 @@ function incorrectChangeMan() {
 
 
 function startGame(k) {
-    //toGuess = await findAWord(k);
+    // toGuess = findAWord(k);
     toGuess = "peanut";
     document.getElementById("message").innerHTML = "";
     for (let i = 0; i < toGuess.length; i++) {
@@ -60,60 +60,6 @@ function startGame(k) {
     }
     document.getElementById("message").innerHTML += give;
     console.log(toGuess);
-}
-
-function makeAGuess(isVal) {
-    let guess = document.getElementById('guess').value;
-    if (isVal === true) {
-        if (guessed.indexOf(guess) > -1) {
-            alert("You have guessed this character before. Try another");
-            console.log("Guessed Before")
-        }
-        else if (toGuess.indexOf(guess) > -1) {
-            console.log("correct guess");                           // tell me its a correct guess
-            onPage = document.getElementById("message").innerHTML;  //onPage is the _ _ _ _ _ _
-            let onPageArray = [];
-            for (let i = 0; i < onPage.length; i++) {
-                onPageArray.push(onPage.charAt(i));
-            }
-            onPageArray.splice(toGuess.indexOf(guess) * 2, 1, guess);
-            onPage = onPageArray.toString();
-            console.log(onPageArray);
-
-            onPage = onPage.replace(",", "");
-            console.log(onPage);
-
-
-
-
-
-
-            // onPageArray = onPage.split("");
-            // console.log(onPageArray);
-
-            // onPageArray.splice(toGuess.indexOf(guess), 1, guess);
-            // console.log(onPageArray);
-            // onPage = onPageArray.toString();
-            // console.log(onPage);
-
-            // onPage = onPage.replace(",", "");
-            // console.log(onPage);
-
-            document.getElementById("message").innerHTML = onPage;                      //need to change the _ _ _ _ shows the guess _ _ a _ _ _
-            // if (onPageArray === toGuess)
-        }
-        else {
-            incorrectChangeMan();
-            console.log("wrong guess");
-        }
-        document.getElementById("characters").innerHTML += guess;
-    } else {
-
-    }
-}
-
-function correctGuess() {
-
 }
 
 function findAWord(k) {
@@ -147,3 +93,67 @@ function findAWord(k) {
 
     };
 }
+
+
+function makeAGuess(isVal) {
+    let guess = document.getElementById('guess').value;
+    guess = guess.toLowerCase();
+    if (isVal === true) {
+        if (guessed.indexOf(guess) > -1) {
+            alert("You have guessed this character before. Try another");
+            console.log("Guessed Before")
+        }
+        else if (toGuess.indexOf(guess) > -1) {
+            console.log("correct guess");                           // tell me its a correct guess
+            onPage = document.getElementById("message").innerHTML;  //onPage is the _ _ _ _ _ _
+            let onPageArray = [];
+            for (let i = 0; i < onPage.length; i++) {
+                onPageArray.push(onPage.charAt(i));
+            }
+            onPageArray.splice(toGuess.indexOf(guess) * 2, 1, guess);
+            console.log(onPageArray);
+
+            onPage = onPageArray.toString();
+            console.log(onPage);
+
+            onPage = onPage.replace(/,/g, "");
+            console.log(onPage);
+
+
+
+
+
+
+            // onPageArray = onPage.split("");
+            // console.log(onPageArray);
+
+            // onPageArray.splice(toGuess.indexOf(guess), 1, guess);
+            // console.log(onPageArray);
+            // onPage = onPageArray.toString();
+            // console.log(onPage);
+
+            // onPage = onPage.replace(",", "");
+            // console.log(onPage);
+
+            document.getElementById("message").innerHTML = onPage;                      //need to change the _ _ _ _ shows the guess _ _ a _ _ _
+            // if (onPageArray === toGuess)
+        }
+        else {
+            incorrectChangeMan();
+            console.log("wrong guess");
+        }
+        document.getElementById("characters").innerHTML += guess;
+    } else {
+
+    }
+    if (document.getElementById("message").innerHTML.replace(/ /g, "") === toGuess) {
+        alert("YOU WIN!!!");
+    }
+
+
+}
+
+function correctGuess() {
+
+}
+
