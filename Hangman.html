@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="intro-header">
+        <div class="container">
+            <div class="intro-message">
+                <h1>Nick's Homepage</h1>
+                <h3>WELCOME BOiiiii!</h3>
+                <hr class="intro-divider">
+                <ul class="list-inline intro-social-buttons">
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/husky.heaven/?hl=en" class="btn btn-secondary btn-lg">
+                                                    <i class="fa fa-paw fa-fw"></i>
+                                                    <span class="network-name">Husky Here</span>
+                                                </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/nichharp/nichharp.github.io" class="btn btn-secondary btn-lg">
+                                                    <i class="fa fa-github fa-fw"></i>
+                                                    <span class="network-name">Gitbub</span>
+                                                </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="Projects.html" class="btn btn-secondary btn-lg">
+                                                    <i class="fa fa-file-word-o fa-fw"></i>
+                                                    <span class="network-name">Projects</span>
+                                                    <a href="https://www.instagram.com/husky.heaven/?hl=en"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <body>
+
+        <h2>Hangman</h2>
+        <!-- <p> Declare a variable, Store a value, Display as Document, Alert and Console</p> -->
+        <button onclick="startGame('Easy')">Easy</button>
+        <button onclick="startGame('Med')">Medium</button>
+        <button onclick="startGame('Hard')">Hard</button>
+        <br>
+        <br>
+
+        <input type="text" id="guess" value="Your Guess"><button onclick="Validate(document.getElementById('guess').value)">Make Your Guess</button>
+        <br>
+        <!-- <br>
+        <input type="text" id="CarMake" value="The Car Make">
+        <br>
+        <input type="text" id="CarMileage" value="The Car Mileage" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <br>
+        <input type="text" id="CarFaults" value="Number of faults" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <br>
+        <button onclick="addCar(document.getElementById('CarName').value , document.getElementById('CarMake').value, document.getElementById('CarMileage').value, document.getElementById('CarFaults').value )">Add your car to Garage</button>
+        <br>
+        <br>
+        <button onclick="printGarage()">Print The Garage</button>
+        <br>
+        <br>
+        <input type="text" id="BillIndiv" value="Car Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <br>
+        <button onclick="billMeBaby(document.getElementById('BillIndiv').value)">Bill Car</button> <button onclick="billEveryone()">Bill Everyone</button>
+        <br>
+        <br>
+        <input type="text" id="numForRemov" value="Checkout Car Number">
+        <button onclick="removeCar(document.getElementById('numForRemov').value)">Checkout Car</button>
+        <br>
+        <br>
+        <input type="text" id="command" value="aDm1n CoMmAnD">
+        <button onclick="commandFun(document.getElementById('command').value)">Admin Command</button>
+        <br> -->
+
+        <div id="hangman">
+            -------- <br> | |<br> | <br> | <br> | <br> | <br> | <br> | <br> | <br> |____
+        </div>
+
+
+
+        <div id="message">
+        </div>
+
+
+
+
+
+
+
+        <script src="Hangerman.js">
+
+        </script>
+
+    </body>
+
+
+</html>

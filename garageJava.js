@@ -107,7 +107,7 @@ function billMeBaby(b) {
     b = parseInt(b);
 
     for (let i = 0; i < num; i++) {
-        console.log(i, CarList[i].num, num, b);
+        console.log(i, num, CarList[i].num, b);
         console.log(CarList);
         if (CarList[i].num === b) {
 
