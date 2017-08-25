@@ -86,7 +86,7 @@
         <br>
         <br>
 
-        <input type="text" id="guess" value="Your Guess"><button onclick="Validate(document.getElementById('guess').value)">Make Your Guess</button>
+        <input type="text" id="guess" value="Your Guess"><button onclick="makeAGuess(Validate(document.getElementById('guess').value))">Make Your Guess</button>
         <br>
         <!-- <br>
         <input type="text" id="CarMake" value="The Car Make">
@@ -120,7 +120,10 @@
 
 
 
-        <div id="message">
+        <div id="message" style="font-size:200%">
+        </div>
+
+        <div id="characters" style="font-size:200%">
         </div>
 
 
