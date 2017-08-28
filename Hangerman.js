@@ -14,7 +14,6 @@ findAWord("Hard");
 // console.log(medWord);
 // console.log(hardWord);
 document.getElementById("characters").innerHTML = "Guessed Characters: ";
-let jjj = [5,4,3,2,1];
 
 
 
@@ -56,7 +55,7 @@ function incorrectChangeMan() {
         document.getElementById("hangman").innerHTML = "-------- <br> | \t |<br> | O<br> | /|\\ <br> |  |<br> | / \\ <br> | <br> | <br> | <br> |____";
     }
     else if (incAns === 8) {
-        alert("YOU LOST, refresh");
+        alert("YOU LOST, the correct answer was "+ toGuess +", refresh");
     }
 }
 
@@ -73,11 +72,12 @@ function startGame(k) {
     } else {
         toGuess = h;
     }
-
+    console.log(toGuess , toGuess.length);
+    toGuess = toGuess.slice(0,-1)
     for (let i = 0; i < toGuess.length; i++) {
         give += "_ ";
     }
-    console.log(toGuess);
+    console.log(toGuess , toGuess.length, toGuess.split(""),);
     document.getElementById("message").innerHTML = give;
 
 }
