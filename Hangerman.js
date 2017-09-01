@@ -7,9 +7,11 @@ let onPage = "";
 let h = "";
 let m = "";
 let e = "";
-findAWord("Easy");
-findAWord("Med");
-findAWord("Hard");
+let request;
+let requestData ;
+// findAWord("Easy");
+// findAWord("Med");
+// findAWord("Hard");
 // console.log(easyWord);
 // console.log(medWord);
 // console.log(hardWord);
@@ -61,23 +63,21 @@ function incorrectChangeMan() {
 
 
 function startGame(k) {
+    document.getElementById('easyButton').style.display= "none";
+    document.getElementById('medButton').style.display= "none";
+    document.getElementById('hardButton').style.display= "none";
+    
     // console.log(easyWord);
     // console.log(medWord);
     // console.log(hardWord);
-    console.log("Pur", e, m, h);
-    if (k === "Easy") {
-        toGuess = e;
-    } else if (k === "Med") {
-        toGuess = m;
-    } else {
-        toGuess = h;
-    }
-    console.log(toGuess , toGuess.length);
+    // console.log("Pur", e, m, h);
+    findAWord(k);
+    // console.log(toGuess , toGuess.length);
     toGuess = toGuess.slice(0,-1)
     for (let i = 0; i < toGuess.length; i++) {
         give += "_ ";
     }
-    console.log(toGuess , toGuess.length, toGuess.split(""),);
+    // console.log(toGuess , toGuess.length, toGuess.split(""),);
     document.getElementById("message").innerHTML = give;
 
 }
@@ -85,42 +85,60 @@ function startGame(k) {
 
 
 
+function get(url){
+    return new Promise((resolve) => {
+
+        console.log("started promise");
+        var requestURL = url;
+        request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = "text";
+        request.send();
+        request.onload = function () {
+        resolve( request.response);
+        
+    }
+})}
+
+function doPromise(){
+    get("https://raw.githubusercontent.com/nichharp/nichharp.github.io/master/words_alpha.txt").then((resolve) => { 
+    requestData = resolve;
+    requestData = requestData.split("\n");
+    console.log("promise worked");})
+}
+
+
+
+
 function findAWord(k) {
-    var requestURL = "https://raw.githubusercontent.com/nichharp/nichharp.github.io/master/words_alpha.txt";
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = "text";
-    request.send();
     let cur = "";
-    request.onload = function () {
-        requestData = request.response;
-        requestData = requestData.split("\n");
+        // requestData = requestData.split("\n");
         // console.log(requestData);
         do {
             let rand = Math.floor(Math.random() * 370101 + 1);
             if (k === "Easy") {
                 if (requestData[rand].length > 8) {
-                    console.log(requestData[rand]);
+                    // console.log(requestData[rand]);
                     e = (requestData[rand]);
-                    cur = (requestData[rand]);
+                    toGuess = (requestData[rand]);
 
                 }
             } else if (k === "Med") {
                 if (requestData[rand].length < 8 && requestData[rand].length > 4) {
-                    console.log(requestData[rand]);
+                    // console.log(requestData[rand]);
                     m = (requestData[rand]);
-                    cur = (requestData[rand]);
+                    toGuess = (requestData[rand]);
 
                 }
             } else {
                 if (requestData[rand].length < 5) {
-                    console.log(requestData[rand]);
+                    // console.log(requestData[rand]);
                     h = (requestData[rand]);
-                    cur = (requestData[rand]);
+                    toGuess = (requestData[rand]);
 
                 }
             }
-        } while (cur === "");
+        } while (toGuess === "");
 
     };
     // // console.log(re);
@@ -128,24 +146,74 @@ function findAWord(k) {
     // return cur;#
     // pur = cur;
 
-}
+
+
+
+
+
+
+// function findAWord(k) {
+//     var requestURL = "https://raw.githubusercontent.com/nichharp/nichharp.github.io/master/words_alpha.txt";
+//     var request = new XMLHttpRequest();
+//     request.open('GET', requestURL);
+//     request.responseType = "text";
+//     request.send();
+//     let cur = "";
+//     request.onload = function () {
+//         requestData = request.response;
+//         requestData = requestData.split("\n");
+//         // console.log(requestData);
+//         do {
+//             let rand = Math.floor(Math.random() * 370101 + 1);
+//             if (k === "Easy") {
+//                 if (requestData[rand].length > 8) {
+//                     console.log(requestData[rand]);
+//                     e = (requestData[rand]);
+//                     cur = (requestData[rand]);
+
+//                 }
+//             } else if (k === "Med") {
+//                 if (requestData[rand].length < 8 && requestData[rand].length > 4) {
+//                     console.log(requestData[rand]);
+//                     m = (requestData[rand]);
+//                     cur = (requestData[rand]);
+
+//                 }
+//             } else {
+//                 if (requestData[rand].length < 5) {
+//                     console.log(requestData[rand]);
+//                     h = (requestData[rand]);
+//                     cur = (requestData[rand]);
+
+//                 }
+//             }
+//         } while (cur === "");
+
+//     };
+//     // // console.log(re);
+//     // cur = request.onload;
+//     // return cur;#
+//     // pur = cur;
+
+// }
+
 
 
 function makeAGuess(isVal) {
     let guess = document.getElementById('guess').value;
     guess = guess.toLowerCase();
     if (isVal === true) {
-        console.log(toGuess.indexOf(guess));
+        // console.log(toGuess.indexOf(guess));
 
         if (guessed.indexOf(guess) > -1) {
             alert("You have guessed this character before. Try another");
-            console.log("Guessed Before");
+            // console.log("Guessed Before");
         }
         if (toGuess.indexOf(guess) > -1) {
             onPage = document.getElementById("message").innerHTML; //has a space at the end  //onPage is the _ _ _ _ _ _
 
-            console.log("correct guess");              // tell me its a correct guess
-            console.log(onPage);
+            // console.log("correct guess");              // tell me its a correct guess
+            // console.log(onPage);
             let instancesOf = [];
 
             for (let j = 0; j < toGuess.length; j++) {
@@ -161,8 +229,8 @@ function makeAGuess(isVal) {
             for (let i = 0; i < onPage.length; i++) {
                 onPageArray.push(onPage.charAt(i));
             }
-            console.log(onPageArray);
-            console.log(instancesOf ,instancesOf.length);
+            // console.log(onPageArray);
+            // console.log(instancesOf ,instancesOf.length);
 
             for (let k = 0; k < instancesOf.length; k++) {
                 onPageArray.splice(instancesOf[k] * 2, 1, guess);
@@ -170,7 +238,7 @@ function makeAGuess(isVal) {
             onPage = onPageArray.toString();
             onPage = onPage.replace(/,/g, "");
             guessed += guess;
-            console.log(onPage);
+            // console.log(onPage);
 
 
 
@@ -220,14 +288,14 @@ function makeAGuess(isVal) {
         }
         else {
             incorrectChangeMan();
-            console.log("wrong guess");
+            // console.log("wrong guess");
         }
         document.getElementById("characters").innerHTML += guess;
     } else {
 
     }
     if (document.getElementById("message").innerHTML.replace(/ /g, "").replace(/_/g, "") === toGuess) {
-        alert("YOU WIN!!!");
+        alert("YOU WIN!!! Refresh to play again!");
     }
 
 

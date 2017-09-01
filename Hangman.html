@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -22,10 +22,10 @@
 
 </head>
 
-<body>
+<body onload="doPromise()">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
         <div class="container">
             <a class="navbar-brand" href="index.html">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -80,9 +80,9 @@
 
         <h2>Hangman</h2>
         <!-- <p> Declare a variable, Store a value, Display as Document, Alert and Console</p> -->
-        <button onclick="startGame('Easy')">Easy</button>
-        <button onclick="startGame('Med')">Medium</button>
-        <button onclick="startGame('Hard')">Hard</button>
+        <button id="easyButton" onclick="startGame('Easy')">Easy</button>
+        <button id="medButton"onclick="startGame('Med')">Medium</button>
+        <button id="hardButton"onclick="startGame('Hard')">Hard</button>
         <br>
         <br>
 
@@ -98,7 +98,7 @@
         <button onclick="addCar(document.getElementById('CarName').value , document.getElementById('CarMake').value, document.getElementById('CarMileage').value, document.getElementById('CarFaults').value )">Add your car to Garage</button>
         <br>
         <br>
-        <button onclick="printGarage()">Print The Garage</button>
+        <buttonc onclick="printGarage()">Print The Garage</button>
         <br>
         <br>
         <input type="text" id="BillIndiv" value="Car Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
